@@ -52,7 +52,8 @@ class GameModelTests( TestCase ):
         )
         game.handleGuess('X')
         #The game is handling an additional guess here, so guesses taken becomes 1 higher than what was previously provided
-        self.assertEquals( expectedGuessesTaken + 1, game.guesses_taken)
+        expectedGuessesTaken += 1
+        self.assertEquals( expectedGuessesTaken, game.guesses_taken)
 
     ### guessed_word_state field
     def test_guessed_word_state_is_unchanged_if_guess_not_in_word( self ):
